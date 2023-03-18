@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>http://lucastorres.dev/</loc>
+    <lastmod>2023-03-18T09:03:20-08:00</lastmod>
+  </url><url>
+    <loc>http://lucastorres.dev/posts/my-first-post/</loc>
+    <lastmod>2023-03-18T09:03:20-08:00</lastmod>
+  </url><url>
+    <loc>http://lucastorres.dev/posts/</loc>
+    <lastmod>2023-03-18T09:03:20-08:00</lastmod>
+  </url><url>
+    <loc>http://lucastorres.dev/categories/</loc>
+  </url><url>
+    <loc>http://lucastorres.dev/tags/</loc>
+  </url>
+</urlset>
