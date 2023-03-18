@@ -1,0 +1,27 @@
+baseURL = 'http://example.org/'
+languageCode = 'pt-br'
+title = 'Lucas Torres'
+theme = "paper"
+
+[params]
+  # color style
+  color = 'wheat'
+
+  # header social icons
+  twitter = 'lucatsf'               # twitter.com/YOUR_TWITTER_ID
+  github = 'lucatsf'                 # github.com/YOUR_GITHUB_ID
+  instagram = 'lucatsf'           # instagram.com/YOUR_INSTAGRAM_ID
+  rss = true
+
+  # home page profile
+  avatar = 'https://avatars.githubusercontent.com/u/18267941?v=4'                 # gravatar email or image url
+  name = 'Lucas'
+  bio = 'Este é um blog pessoal onde eu registro minhas experiências e aprendizados e também um espaço para compartilhar conhecimento.'
+
+  # misc
+  disableHLJS = true                        # disable highlight.js
+  monoDarkIcon = true                       # show monochrome dark mode icon
+  # gravatarCdn = 'GRAVATAR_CDN_LINK'         # e.g. 'https://cdn.v2ex.com/gravatar/'
+  # graphCommentId = "YOUR_GRAPH_COMMENT_ID"  # use graph comment (disqus alternative)
+
+  comments = false                            # disable comments for a specific page
