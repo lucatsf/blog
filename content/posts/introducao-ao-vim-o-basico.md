@@ -34,33 +34,20 @@ Para criar um arquivo ou abrir um arquivo:
 
 vim CreatePerson.js
 
-**ESC** entra para o modo normal
-
-**:q** saí do arquivo sem salvar
-
-**:wq** saí do arquivo e salva o arquivo
-
-**i** entra em modo de inserção no arquivo
-
-**:30** dois pontos mais o numero o numero se refere a linha que você pretende ir diretamente
-
-**:$** vai diretamente para o final do arquivo
-
-**dd** se você apertar a tecla d duas vezes rapidamente a linha em que o cursor estiver sera deletada
-
-**u** funciona como o CTRL Z
-
-**v** entra em modo de selecionar o texto ou caractere desejado
-
-**y** depois de pressionar v e deixar o texto selecionado pressione y que irá copiar o texto para a área de transferência, esse é o modo yank
-
-**p** cola o texto que estiver na area de transferencia
-
-**/** quando estiver no modo normal pressione / e em seguida uma palavra que existe dentro do arquivo e você será levado até a palavra
-
-**:split** cria uma divisão horizontal
-
-**:vsplit** cria uma divisão vertical
+- **ESC** entra para o modo normal
+- **:q** saí do arquivo sem salvar
+- **:wq** saí do arquivo e salva o arquivo
+- **i** entra em modo de inserção no arquivo
+- **:30** dois pontos mais o numero o numero se refere a linha que você pretende ir diretamente
+- **:$** vai diretamente para o final do arquivo
+- **dd** se você apertar a tecla d duas vezes rapidamente a linha em que o cursor estiver sera deletada
+- **u** funciona como o CTRL Z
+- **v** entra em modo de selecionar o texto ou caractere desejado
+- **y** depois de pressionar v e deixar o texto selecionado pressione y que irá copiar o texto para a área de transferência, esse é o modo yank
+- **p** cola o texto que estiver na area de transferencia
+- **/** quando estiver no modo normal pressione / e em seguida uma palavra que existe dentro do arquivo e você será levado até a palavra
+- **:split** cria uma divisão horizontal
+- **:vsplit** cria uma divisão vertical
 
 pressione CTRL e **w** duas vezes seguidas para navegar pelos splits criados
 
