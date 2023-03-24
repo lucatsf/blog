@@ -5,6 +5,7 @@ draft: false
 ---
 
 ## Introdução
+
 Um certo dia percebi que um amigo meu estava editando e criando arquivos pelo vim. Logo perguntei, Por que você está usando o vim? Ele enfatiza e me diz;
 Cara depois que você pega o jeito você tem uma produtividade maior e além do mais faz você parecer sênior 😅.
 
@@ -13,9 +14,11 @@ Brincadeiras à parte eu fiquei curioso e fui pesquisar, não achei nenhuma pesq
 Estou utilizando essa ferramenta faz alguns meses, o fato que muitos desenvolvedores comentam é a queda de desempenho no começo do aprendizado, claro que como qualquer coisa que você aprende no início a velocidade para o desempenho esperado é menor, mas as boas notícias são que pelo menos ao que muitos afirmam, a longo prazo o desempenho aumenta significamente.
 
 ## Observação
+
 Particularmente eu notei que para algumas tarefas do dia eu preciso utilizar uma IDE que tenha as ferramentas necessárias para o sucesso da minha tarefa. Mas por outro lado, eu consigo usar o vim com tranquilidade em outras tarefas. Vejo que quando preciso trabalhar somente com o backend eu sinto uma facilidade maior pois eu posso utilizar apenas o terminal sem precisar abrir um navegador ou outra ferramenta.
 
 ## Opinião
+
 No meu ponto de vista, fica que eu não sou obrigado a usar somente uma ferramenta para desenvolver e sim usar a ferramenta que melhor se adeque ao que você precisa fazer no momento e que no meio social dos desenvolvedores experientes a maioria indica que pelo menos você precisa aprender o básico do vim.
 Vou deixar aqui alguns comandos básicos para você experimentar e se divertir. Antes, deixa eu te mostrar os modos básicos que o vim tem.
 
@@ -26,6 +29,7 @@ Vou deixar aqui alguns comandos básicos para você experimentar e se divertir. 
 * Modo linha de comando para operações como salvar, editar, sair etc…
 
 ## Comandos básicos
+
 Para criar um arquivo ou abrir um arquivo:
 
 vim CreatePerson.js
@@ -62,6 +66,7 @@ pressione CTRL e **w** duas vezes seguidas para navegar pelos splits criados
 
 
 ## Importante
+
 É sempre muito importante quando você quer aprender alguma tecnologia ou ferramenta nova buscar informações sobre ela, na sua documentação,
 vou deixar dois sites que me ajudaram a aprender mais sobre essa ferramenta.
 
