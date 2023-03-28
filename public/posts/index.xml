@@ -6,11 +6,59 @@
     <description>Recent content in Posts on Lucas Torres</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Sat, 18 Mar 2023 09:03:20 -0800</lastBuildDate><atom:link href="http://lucastorres.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 27 Mar 2023 23:53:20 -0800</lastBuildDate><atom:link href="http://lucastorres.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Mu primeiro post</title>
+      <title>Técnica PERT (Program Evaluation and Review Technique)</title>
+      <link>http://lucastorres.dev/posts/tecnica-pert-program-evaluation-and-review-technique/</link>
+      <pubDate>Mon, 27 Mar 2023 23:53:20 -0800</pubDate>
+      
+      <guid>http://lucastorres.dev/posts/tecnica-pert-program-evaluation-and-review-technique/</guid>
+      <description>Introdução A técnica PERT (Program Evaluation and Review Technique) foi desenvolvida durante a década de 1950 pelo Departamento de Defesa dos Estados Unidos, em parceria com a empresa de consultoria Booz Allen Hamilton e a empresa de tecnologia Lockheed Martin.
+Na época, o Departamento de Defesa dos Estados Unidos enfrentava grandes desafios na gestão de projetos complexos, especialmente na construção de equipamentos militares sofisticados, como submarinos nucleares e mísseis balísticos. Nesse contexto, surgiu a necessidade de uma técnica que ajudasse a gerenciar melhor o tempo e os recursos envolvidos em projetos complexos.</description>
+    </item>
+    
+    <item>
+      <title>DBeaver Native client is not specified for connection</title>
+      <link>http://lucastorres.dev/posts/dbeaver-native-client-is-not-specified-for-connection/</link>
+      <pubDate>Thu, 23 Mar 2023 21:03:22 -0800</pubDate>
+      
+      <guid>http://lucastorres.dev/posts/dbeaver-native-client-is-not-specified-for-connection/</guid>
+      <description>Introdução Quando você precisa fazer um dump atual da base de dados de produção ou quando você precisa fazer uma migração de dados de um banco de dados para outro, você pode precisar de um cliente nativo para fazer isso. O DBeaver é um ótimo cliente de banco de dados que permite que você faça isso facilmente, mas você pode encontrar um erro como este: DBeaver Native client is not specified for connection.</description>
+    </item>
+    
+    <item>
+      <title>Introdução ao Vim: o básico</title>
+      <link>http://lucastorres.dev/posts/introducao-ao-vim-o-basico/</link>
+      <pubDate>Tue, 28 Feb 2023 21:03:22 -0800</pubDate>
+      
+      <guid>http://lucastorres.dev/posts/introducao-ao-vim-o-basico/</guid>
+      <description>Introdução Um certo dia percebi que um amigo meu estava editando e criando arquivos pelo vim. Logo perguntei, Por que você está usando o vim? Ele enfatiza e me diz; Cara depois que você pega o jeito você tem uma produtividade maior e além do mais faz você parecer sênior 😅.
+Brincadeiras à parte eu fiquei curioso e fui pesquisar, não achei nenhuma pesquisa que afirmava que utilizar vim é mais produtivo porém, lendo em alguns blogs algo me chamou muito a atenção que a velocidade de digitação será a mesma independente da IDE que você está utilizando.</description>
+    </item>
+    
+    <item>
+      <title>Como criar um object literal em PHP</title>
+      <link>http://lucastorres.dev/posts/como-criar-um-object-literal-em-php/</link>
+      <pubDate>Thu, 10 Nov 2022 21:03:22 -0800</pubDate>
+      
+      <guid>http://lucastorres.dev/posts/como-criar-um-object-literal-em-php/</guid>
+      <description>Introdução Infelizmente no PHP não existe object literal, mas é possível &amp;ldquo;falsificar&amp;rdquo; colocar arrays em objetos, no código abaixo observe que os objetos são sempre passados ​​por &amp;ldquo;referência&amp;rdquo; eles são passados ​​por um valor numérico chamado identificador de objeto. Portanto alterar um atributo de um objeto o altera em todos os lugares em que o objeto foi atribuído.
+$funtionResult = array( (object)array(&amp;#34;name&amp;#34; =&amp;gt; &amp;#34;John&amp;#34;, &amp;#34;age&amp;#34; =&amp;gt; function () { return 30; }), (object)array(&amp;#34;name&amp;#34; =&amp;gt; &amp;#34;Jane&amp;#34;, &amp;#34;hobby&amp;#34; =&amp;gt; function() { return &amp;#34;painting&amp;#34;; }) ); Observação Neste exemplo foi possível escrever uma function como o valor do elemento hobby que foi atribuído a variável $funtionResult e ao executar a variável agora com a atribuição utilizando $funtionResult(); ele executa a function com o retorno de uma string &amp;ldquo;painting&amp;rdquo;</description>
+    </item>
+    
+    <item>
+      <title>Como instalar o PHP-8 no debian 9/10/11</title>
+      <link>http://lucastorres.dev/posts/como-instalar-o-php-8-no-debian-11-10-9/</link>
+      <pubDate>Tue, 06 Sep 2022 21:03:22 -0800</pubDate>
+      
+      <guid>http://lucastorres.dev/posts/como-instalar-o-php-8-no-debian-11-10-9/</guid>
+      <description>Introdução Neste pequeno guia, mostrarei como instalar o PHP 8.0 no Debian 11, 10, 9. PHP é uma poderosa linguagem de script para desenvolvimento web. Qualquer script PHP pode ser executado em sistemas Linux, Windows, MacOS e Unix com o tempo de execução do PHP instalado. A versão oficial do PHP 8 é 26 de novembro de 2020. Esta versão básica do PHP tem muitos novos recursos e melhorias de desempenho.</description>
+    </item>
+    
+    <item>
+      <title>Meu primeiro post</title>
       <link>http://lucastorres.dev/posts/my-first-post/</link>
-      <pubDate>Sat, 18 Mar 2023 09:03:20 -0800</pubDate>
+      <pubDate>Thu, 18 Mar 2021 09:03:20 -0800</pubDate>
       
       <guid>http://lucastorres.dev/posts/my-first-post/</guid>
       <description>Introdução Olá a todos! Este é o meu primeiro post no meu novo blog onde pretendo compartilhar as minhas experiências como estudante de Ciência da Computação e desenvolvedor backend. Como muitos de vocês devem saber, o campo da tecnologia está em constante evolução, e eu acredito que é importante compartilhar o conhecimento adquirido para ajudar outras pessoas a crescerem em suas carreiras.

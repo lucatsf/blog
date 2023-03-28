@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready text-sm lg:text-base"
+  style="--bg: #f8f5d7"
+  lang="pt-br"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Introdução ao Vim: o básico - Lucas Torres</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  <meta name="description" content="Introdução Um certo dia percebi que um amigo meu estava editando e criando arquivos pelo vim. Logo perguntei, Por que você está usando o vim? Ele enfatiza e me diz; Cara depois que você pega o jeito você tem uma produtividade maior e além do mais faz você parecer sênior 😅.
+Brincadeiras à parte eu fiquei curioso e fui pesquisar, não achei nenhuma pesquisa que afirmava que utilizar vim é mais produtivo porém, lendo em alguns blogs algo me chamou muito a atenção que a velocidade de digitação será a mesma independente da IDE que você está utilizando." />
+  <meta name="author" content="Lucas" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://lucastorres.dev/main.min.css" />
+
+  
+
+  
+     
+  <link rel="preload" as="image" href="http://lucastorres.dev/theme.png" />
+
+  
+  
+  
+  <link rel="preload" as="image" href="https://avatars.githubusercontent.com/u/18267941?v=4" />
+  
+  
+
+  
+  <link rel="preload" as="image" href="http://lucastorres.dev/twitter.svg" />
+  
+  <link rel="preload" as="image" href="http://lucastorres.dev/github.svg" />
+  
+  <link rel="preload" as="image" href="http://lucastorres.dev/instagram.svg" />
+  
+  <link rel="preload" as="image" href="http://lucastorres.dev/rss.svg" />
+  
+
+  
+  <link rel="icon" href="http://lucastorres.dev/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://lucastorres.dev/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.92.2" />
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:title" content="Introdução ao Vim: o básico" />
+<meta property="og:description" content="Introdução Um certo dia percebi que um amigo meu estava editando e criando arquivos pelo vim. Logo perguntei, Por que você está usando o vim? Ele enfatiza e me diz; Cara depois que você pega o jeito você tem uma produtividade maior e além do mais faz você parecer sênior 😅.
+Brincadeiras à parte eu fiquei curioso e fui pesquisar, não achei nenhuma pesquisa que afirmava que utilizar vim é mais produtivo porém, lendo em alguns blogs algo me chamou muito a atenção que a velocidade de digitação será a mesma independente da IDE que você está utilizando." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://lucastorres.dev/posts/introducao-ao-vim-o-basico/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-02-28T21:03:22-08:00" />
+<meta property="article:modified_time" content="2023-02-28T21:03:22-08:00" />
+
+
+  
+  <meta itemprop="name" content="Introdução ao Vim: o básico">
+<meta itemprop="description" content="Introdução Um certo dia percebi que um amigo meu estava editando e criando arquivos pelo vim. Logo perguntei, Por que você está usando o vim? Ele enfatiza e me diz; Cara depois que você pega o jeito você tem uma produtividade maior e além do mais faz você parecer sênior 😅.
+Brincadeiras à parte eu fiquei curioso e fui pesquisar, não achei nenhuma pesquisa que afirmava que utilizar vim é mais produtivo porém, lendo em alguns blogs algo me chamou muito a atenção que a velocidade de digitação será a mesma independente da IDE que você está utilizando."><meta itemprop="datePublished" content="2023-02-28T21:03:22-08:00" />
+<meta itemprop="dateModified" content="2023-02-28T21:03:22-08:00" />
+<meta itemprop="wordCount" content="593">
+<meta itemprop="keywords" content="" />
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Introdução ao Vim: o básico"/>
+<meta name="twitter:description" content="Introdução Um certo dia percebi que um amigo meu estava editando e criando arquivos pelo vim. Logo perguntei, Por que você está usando o vim? Ele enfatiza e me diz; Cara depois que você pega o jeito você tem uma produtividade maior e além do mais faz você parecer sênior 😅.
+Brincadeiras à parte eu fiquei curioso e fui pesquisar, não achei nenhuma pesquisa que afirmava que utilizar vim é mais produtivo porém, lendo em alguns blogs algo me chamou muito a atenção que a velocidade de digitação será a mesma independente da IDE que você está utilizando."/>
+
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[5rem] max-w-3xl px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="-translate-x-[1px] -translate-y-0.5 text-3xl font-bold"
+      href="http://lucastorres.dev/"
+      >Lucas Torres</a
+    >
+    <div
+      class="btn-dark text-[0] ml-6 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 -mr-8 flex h-[5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = `"#f8f5d7"`.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 dark:invert lg:mt-0 lg:ml-12 lg:items-center lg:space-x-6"
+    >
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./twitter.svg)"
+        href="https://twitter.com/lucatsf"
+        target="_blank"
+        rel="me"
+      >
+        twitter
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/lucatsf"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./instagram.svg)"
+        href="https://instagram.com/lucatsf"
+        target="_blank"
+        rel="me"
+      >
+        instagram
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./rss.svg)"
+        href="http://lucastorres.dev/index.xml"
+        target="_blank"
+        rel="alternate"
+      >
+        rss
+      </a>
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-10rem)] max-w-3xl px-8 pt-16 pb-24 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-20">
+    <h1 class="!my-0 pb-2.5">Introdução ao Vim: o básico</h1>
+
+    
+    <div class="text-sm opacity-60">
+      
+      <time>Feb 28, 2023</time>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><h2 id="introdução">Introdução</h2>
+<p>Um certo dia percebi que um amigo meu estava editando e criando arquivos pelo vim. Logo perguntei, Por que você está usando o vim? Ele enfatiza e me diz;
+Cara depois que você pega o jeito você tem uma produtividade maior e além do mais faz você parecer sênior 😅.</p>
+<p>Brincadeiras à parte eu fiquei curioso e fui pesquisar, não achei nenhuma pesquisa que afirmava que utilizar vim é mais produtivo porém, lendo em alguns blogs algo me chamou muito a atenção que a velocidade de digitação será a mesma independente da IDE que você está utilizando. A velocidade de digitação é irrelevante até um certo nível mas o que de fato faz toda diferença é a capacidade e desempenho de navegar pelo código ou arquivos é o mais importante.</p>
+<p>Estou utilizando essa ferramenta faz alguns meses, o fato que muitos desenvolvedores comentam é a queda de desempenho no começo do aprendizado, claro que como qualquer coisa que você aprende no início a velocidade para o desempenho esperado é menor, mas as boas notícias são que pelo menos ao que muitos afirmam, a longo prazo o desempenho aumenta significamente.</p>
+<h2 id="observação">Observação</h2>
+<p>Particularmente eu notei que para algumas tarefas do dia eu preciso utilizar uma IDE que tenha as ferramentas necessárias para o sucesso da minha tarefa. Mas por outro lado, eu consigo usar o vim com tranquilidade em outras tarefas. Vejo que quando preciso trabalhar somente com o backend eu sinto uma facilidade maior pois eu posso utilizar apenas o terminal sem precisar abrir um navegador ou outra ferramenta.</p>
+<h2 id="opinião">Opinião</h2>
+<p>No meu ponto de vista, fica que eu não sou obrigado a usar somente uma ferramenta para desenvolver e sim usar a ferramenta que melhor se adeque ao que você precisa fazer no momento e que no meio social dos desenvolvedores experientes a maioria indica que pelo menos você precisa aprender o básico do vim.
+Vou deixar aqui alguns comandos básicos para você experimentar e se divertir. Antes, deixa eu te mostrar os modos básicos que o vim tem.</p>
+<ul>
+<li>
+<p>Modo normal onde você pode navegar pelo arquivo</p>
+</li>
+<li>
+<p>Modo Inserção para inserir e modificar o texto explicitamente</p>
+</li>
+<li>
+<p>Modo linha de comando para operações como salvar, editar, sair etc…</p>
+</li>
+</ul>
+<h2 id="comandos-básicos">Comandos básicos</h2>
+<p>Para criar um arquivo ou abrir um arquivo:</p>
+<p>vim CreatePerson.js</p>
+<ul>
+<li><strong>ESC</strong> entra para o modo normal</li>
+<li><strong>:q</strong> saí do arquivo sem salvar</li>
+<li><strong>:wq</strong> saí do arquivo e salva o arquivo</li>
+<li><strong>i</strong> entra em modo de inserção no arquivo</li>
+<li><strong>:30</strong> dois pontos mais o numero o numero se refere a linha que você pretende ir diretamente</li>
+<li><strong>:$</strong> vai diretamente para o final do arquivo</li>
+<li><strong>dd</strong> se você apertar a tecla d duas vezes rapidamente a linha em que o cursor estiver sera deletada</li>
+<li><strong>u</strong> funciona como o CTRL Z</li>
+<li><strong>v</strong> entra em modo de selecionar o texto ou caractere desejado</li>
+<li><strong>y</strong> depois de pressionar v e deixar o texto selecionado pressione y que irá copiar o texto para a área de transferência, esse é o modo yank</li>
+<li><strong>p</strong> cola o texto que estiver na area de transferencia</li>
+<li><strong>/</strong> quando estiver no modo normal pressione / e em seguida uma palavra que existe dentro do arquivo e você será levado até a palavra</li>
+<li><strong>:split</strong> cria uma divisão horizontal</li>
+<li><strong>:vsplit</strong> cria uma divisão vertical</li>
+</ul>
+<p>pressione CTRL e <strong>w</strong> duas vezes seguidas para navegar pelos splits criados</p>
+<h2 id="importante">Importante</h2>
+<p>É sempre muito importante quando você quer aprender alguma tecnologia ou ferramenta nova buscar informações sobre ela, na sua documentação,
+vou deixar dois sites que me ajudaram a aprender mais sobre essa ferramenta.</p>
+<ul>
+<li><a href="https://www.vim.org/docs.php">https://www.vim.org/docs.php</a></li>
+<li><a href="https://vim.rtorr.com/lang/pt_br">https://vim.rtorr.com/lang/pt_br</a></li>
+</ul>
+<p><strong>Referências:</strong></p>
+<ul>
+<li><a href="https://shivansivakumaran.com/coding/how-i-got-started-with-vim-and-become-more-productive-while-coding/">https://shivansivakumaran.com/coding/how-i-got-started-with-vim-and-become-more-productive-while-coding/</a></li>
+<li><a href="https://stackoverflow.com/questions/1346820/what-are-the-efficiencies-afforded-by-emacs-or-vim-vs-eclipse">https://stackoverflow.com/questions/1346820/what-are-the-efficiencies-afforded-by-emacs-or-vim-vs-eclipse</a></li>
+<li><a href="https://stackoverflow.com/questions/1088387/what-specific-productivity-gains-do-vim-emacs-provide-over-gui-text-editors">https://stackoverflow.com/questions/1088387/what-specific-productivity-gains-do-vim-emacs-provide-over-gui-text-editors</a></li>
+<li><a href="https://dev.to/meenachinmay/will-vim-give-me-more-productivity-2ing">https://dev.to/meenachinmay/will-vim-give-me-more-productivity-2ing</a></li>
+</ul>
+</section>
+
+  
+  
+
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://lucastorres.dev/posts/dbeaver-native-client-is-not-specified-for-connection/"
+      ><span class="mr-1.5">←</span><span>DBeaver Native client is not specified for connection</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://lucastorres.dev/posts/como-criar-um-object-literal-em-php/"
+      ><span>Como criar um object literal em PHP</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+
+  
+  
+
+  
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="opaco mx-auto flex h-[5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2023
+    <a class="link" href="http://lucastorres.dev">Lucas Torres</a>
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >Powered by Hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >Theme Paper</a
+  >
+</footer>
+
+  </body>
+</html>

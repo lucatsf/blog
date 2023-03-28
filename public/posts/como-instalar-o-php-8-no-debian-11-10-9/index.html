@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready text-sm lg:text-base"
+  style="--bg: #f8f5d7"
+  lang="pt-br"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Como instalar o PHP-8 no debian 9/10/11 - Lucas Torres</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  <meta name="description" content="Introdução Neste pequeno guia, mostrarei como instalar o PHP 8.0 no Debian 11, 10, 9. PHP é uma poderosa linguagem de script para desenvolvimento web. Qualquer script PHP pode ser executado em sistemas Linux, Windows, MacOS e Unix com o tempo de execução do PHP instalado. A versão oficial do PHP 8 é 26 de novembro de 2020. Esta versão básica do PHP tem muitos novos recursos e melhorias de desempenho." />
+  <meta name="author" content="Lucas" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://lucastorres.dev/main.min.css" />
+
+  
+
+  
+     
+  <link rel="preload" as="image" href="http://lucastorres.dev/theme.png" />
+
+  
+  
+  
+  <link rel="preload" as="image" href="https://avatars.githubusercontent.com/u/18267941?v=4" />
+  
+  
+
+  
+  <link rel="preload" as="image" href="http://lucastorres.dev/twitter.svg" />
+  
+  <link rel="preload" as="image" href="http://lucastorres.dev/github.svg" />
+  
+  <link rel="preload" as="image" href="http://lucastorres.dev/instagram.svg" />
+  
+  <link rel="preload" as="image" href="http://lucastorres.dev/rss.svg" />
+  
+
+  
+  <link rel="icon" href="http://lucastorres.dev/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://lucastorres.dev/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.92.2" />
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:title" content="Como instalar o PHP-8 no debian 9/10/11" />
+<meta property="og:description" content="Introdução Neste pequeno guia, mostrarei como instalar o PHP 8.0 no Debian 11, 10, 9. PHP é uma poderosa linguagem de script para desenvolvimento web. Qualquer script PHP pode ser executado em sistemas Linux, Windows, MacOS e Unix com o tempo de execução do PHP instalado. A versão oficial do PHP 8 é 26 de novembro de 2020. Esta versão básica do PHP tem muitos novos recursos e melhorias de desempenho." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://lucastorres.dev/posts/como-instalar-o-php-8-no-debian-11-10-9/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-09-06T21:03:22-08:00" />
+<meta property="article:modified_time" content="2022-09-06T21:03:22-08:00" />
+
+
+  
+  <meta itemprop="name" content="Como instalar o PHP-8 no debian 9/10/11">
+<meta itemprop="description" content="Introdução Neste pequeno guia, mostrarei como instalar o PHP 8.0 no Debian 11, 10, 9. PHP é uma poderosa linguagem de script para desenvolvimento web. Qualquer script PHP pode ser executado em sistemas Linux, Windows, MacOS e Unix com o tempo de execução do PHP instalado. A versão oficial do PHP 8 é 26 de novembro de 2020. Esta versão básica do PHP tem muitos novos recursos e melhorias de desempenho."><meta itemprop="datePublished" content="2022-09-06T21:03:22-08:00" />
+<meta itemprop="dateModified" content="2022-09-06T21:03:22-08:00" />
+<meta itemprop="wordCount" content="576">
+<meta itemprop="keywords" content="" />
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Como instalar o PHP-8 no debian 9/10/11"/>
+<meta name="twitter:description" content="Introdução Neste pequeno guia, mostrarei como instalar o PHP 8.0 no Debian 11, 10, 9. PHP é uma poderosa linguagem de script para desenvolvimento web. Qualquer script PHP pode ser executado em sistemas Linux, Windows, MacOS e Unix com o tempo de execução do PHP instalado. A versão oficial do PHP 8 é 26 de novembro de 2020. Esta versão básica do PHP tem muitos novos recursos e melhorias de desempenho."/>
+
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[5rem] max-w-3xl px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="-translate-x-[1px] -translate-y-0.5 text-3xl font-bold"
+      href="http://lucastorres.dev/"
+      >Lucas Torres</a
+    >
+    <div
+      class="btn-dark text-[0] ml-6 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 -mr-8 flex h-[5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = `"#f8f5d7"`.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 dark:invert lg:mt-0 lg:ml-12 lg:items-center lg:space-x-6"
+    >
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./twitter.svg)"
+        href="https://twitter.com/lucatsf"
+        target="_blank"
+        rel="me"
+      >
+        twitter
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/lucatsf"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./instagram.svg)"
+        href="https://instagram.com/lucatsf"
+        target="_blank"
+        rel="me"
+      >
+        instagram
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./rss.svg)"
+        href="http://lucastorres.dev/index.xml"
+        target="_blank"
+        rel="alternate"
+      >
+        rss
+      </a>
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-10rem)] max-w-3xl px-8 pt-16 pb-24 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-20">
+    <h1 class="!my-0 pb-2.5">Como instalar o PHP-8 no debian 9/10/11</h1>
+
+    
+    <div class="text-sm opacity-60">
+      
+      <time>Sep 6, 2022</time>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><h2 id="introdução">Introdução</h2>
+<p>Neste pequeno guia, mostrarei como instalar o PHP 8.0 no Debian 11, 10, 9. PHP é uma poderosa linguagem de script para desenvolvimento web.
+Qualquer script PHP pode ser executado em sistemas Linux, Windows, MacOS e Unix com o tempo de execução do PHP instalado.
+A versão oficial do PHP 8 é 26 de novembro de 2020. Esta versão básica do PHP tem muitos novos recursos e melhorias de desempenho.</p>
+<p>Você também deve esperar novas mudanças, o que significa que algumas modificações em seu código podem precisar ser implementadas no PHP 8. Alguns dos melhores conjuntos de novos recursos que vêm com o PHP 8 são desenvolvedores JIT, discussões nomeadas, fusões, recursos e muitos mais.</p>
+<h2 id="primeiro-passo-atualizar-o-repositório">Primeiro passo atualizar o repositório</h2>
+<p>Atualize seu sistema para a versão mais recente antes de instalar o PHP 8 no seu Debian.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt update
+sudo apt -y upgrade
+</code></pre></div><h2 id="passo-2-adicionar-o-repositório">Passo 2 Adicionar o repositório</h2>
+<p>Os pacotes PHP 8 para Debian estão disponíveis no repositório <a href="https://deb.sury.org/">DEB SURY ORG</a> Estabeleça as dependências necessárias.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt install -y lsb-release ca-certificates apt-transport-https software-properties-common gnupg2
+</code></pre></div><p>Adicione o repositório PHP APT a sua sourcelist Debian.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;deb https://packages.sury.org/php/ </span><span style="color:#66d9ef">$(</span>lsb_release -sc<span style="color:#66d9ef">)</span><span style="color:#e6db74"> main&#34;</span> | sudo tee /etc/apt/sources.list.d/sury-php.list
+</code></pre></div><p>Importe a chave do repositorio</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wget -qO - https://packages.sury.org/php/apt.gpg | sudo apt-key add -
+</code></pre></div><p>Atualize os repositorios</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt update
+sudo apt -y upgrade
+</code></pre></div><h2 id="passo-3-instalar-o-php-8">Passo 3 Instalar o PHP 8</h2>
+<p>Agora sim  com os repositorios adicionados e atualizados, instale o PHP 8.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt install php8.0
+</code></pre></div><p>Depois para confirmar se deu boa</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">php -v
+</code></pre></div><h2 id="extensões-php-8">Extensões PHP 8</h2>
+<p>Tenho certeza que você vai precisar de algumas extensões PHP 8 algumas para conectar com bancos ou qualquer outra coisa.
+Vou deixar uma listinha que normalmente é muito útil quando preciso trabalhar com PHP.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt install php8.0-bcmath php8.0-curl-dbgsym php8.0-gmp-dbgsym php8.0-mysql php8.0-pspell-dbgsym php8.0-tidy php8.0-bcmath-dbgsym php8.0-dba php8.0-imap php8.0-mysql-dbgsym php8.0-readline php8.0-tidy-dbgsym php8.0-bz2 php8.0-dba-dbgsym php8.0-imap-dbgsym php8.0-odbc php8.0-readline-dbgsym php8.0-xdebug php8.0-bz2-dbgsym php8.0-dev php8.0-interbase php8.0-odbc-dbgsym php8.0-snmp php8.0-xml php8.0-cgi php8.0-enchant php8.0-interbase-dbgsym php8.0-opcache php8.0-snmp-dbgsym php8.0-xml-dbgsym php8.0-cgi-dbgsym php8.0-enchant-dbgsym php8.0-intl php8.0-opcache-dbgsym php8.0-soap php8.0-xsl php8.0-cli php8.0-fpm php8.0-intl-dbgsym php8.0-pgsql php8.0-soap-dbgsym php8.0-zip php8.0-cli-dbgsym php8.0-fpm-dbgsym php8.0-ldap php8.0-pgsql-dbgsym php8.0-sqlite3 php8.0-zip-dbgsym php8.0-common php8.0-gd php8.0-ldap-dbgsym php8.0-phpdbg php8.0-sqlite3-dbgsym php8.0-common-dbgsym php8.0-gd-dbgsym php8.0-mbstring php8.0-phpdbg-dbgsym php8.0-sybase php8.0-curl php8.0-gmp php8.0-mbstring-dbgsym php8.0-pspell php8.0-sybase-dbgsym
+</code></pre></div><h2 id="de-brinde-vamos-instalar-o-composer-já-né">De brinde, Vamos instalar o composer já né</h2>
+<p>O <a href="https://getcomposer.org/">PHP Composer</a> é basicamente uma ferramenta de gerenciamento de dependências para aplicativos PHP. Isso facilita a instalação de módulos PHP. O composer vem com todos os módulos necessários para o programa e os instala em um comando. Ele também permite que o dev atualize módulos constantemente.
+Com o Composer, você pode instalar facilmente todos os pacotes de que precisa.
+O desenvolvedor mantém uma lista de pacotes necessários em um arquivo JSON chamado <strong>composer.json</strong>.</p>
+<p>Um documento PHP é enviado pelo painel de controle para configurar o autor em seu sistema. Você pode removê-lo com um utilitário de substituição de linha de comando ou wget. Além disso, você pode baixá-lo com script PHP.
+Os comando que eu vou deixar aqui estão também no site oficial do composer. Esse comando vai baixar o composer-setup.php.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">php -r <span style="color:#e6db74">&#34;copy(&#39;https://getcomposer.org/installer&#39;, &#39;composer-setup.php&#39;);&#34;</span>
+</code></pre></div><p>Para instalar o composer, execute o arquivo.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">php composer-setup.php --install-dir<span style="color:#f92672">=</span>/usr/local/bin --filename<span style="color:#f92672">=</span>composer
+chmod +x /usr/local/bin/composer
+</code></pre></div><p>Agora para verificar se tudo está funcionando, execute o comando.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">composer --version
+</code></pre></div><h2 id="ultimo-detalhe-atualizar-o-composer">Ultimo detalhe atualizar o composer</h2>
+<p>O PHP Composer tem a capacidade de atualizar automaticamente para as versões mais recentes. Se o Composer já estiver instalado em seu sistema, digite o seguinte comando para atualizar o PHP Composer para a versão mais recente.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">composer self-update
+</code></pre></div><p>Fechou agora é só criar seus bugs, ops&hellip; códigos 🙃 hehe</p>
+</section>
+
+  
+  
+
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://lucastorres.dev/posts/como-criar-um-object-literal-em-php/"
+      ><span class="mr-1.5">←</span><span>Como criar um object literal em PHP</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://lucastorres.dev/posts/my-first-post/"
+      ><span>Meu primeiro post</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+
+  
+  
+
+  
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="opaco mx-auto flex h-[5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2023
+    <a class="link" href="http://lucastorres.dev">Lucas Torres</a>
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >Powered by Hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >Theme Paper</a
+  >
+</footer>
+
+  </body>
+</html>

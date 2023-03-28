@@ -50,7 +50,7 @@ console.log(resultado);
 
 Neste exemplo, a função calcularPERT recebe os valores otimista (o), mais provável (n) e pessimista (p) da tarefa, e retorna a estimativa probabilística da tarefa usando a fórmula R = (O + 4N + P) / 6. O resultado é arredondado para duas casas decimais usando o método Math.round.
 
-Para usar a função, basta passar os valores otimista, mais provável e pessimista como parâmetros e armazenar o resultado em uma variável. No exemplo acima, o resultado é armazenado na variável resultado e exibido no console usando o console.log.
+Para usar a função, basta passar os valores otimista, mais provável e pessimista como parâmetros e armazenar o resultado em uma variável. No exemplo acima, o resultado é armazenado na variável resultado e exibido no console usando o console.log os dados de entrada e saida podem ser considerados na unidade de dia ou horas ou semanas, dependendo do projeto.
 
 ## Conclusão
 
