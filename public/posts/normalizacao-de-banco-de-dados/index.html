@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready text-sm lg:text-base"
+  style="--bg: #f8f5d7"
+  lang="pt-br"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Normalizacão De Banco De Dados - Lucas Torres</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  <meta name="description" content="Introdução Como sempre na hora do sofrimento eu vou buscar conhecer como resolver alguns problemas encontrados e dessa vez o problema foi relacionado com banco de dados e então vamos falar sobre a normalização de banco de dados. É um processo que visa a redução da redundância de dados em um banco de dados relacional, mantendo a consistência e integridade dos dados. Existem várias formas normais (NF) que um banco de dados pode atender, sendo as mais comuns 1NF, 2NF, 3NF, 4NF e 5NF." />
+  <meta name="author" content="Lucas" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://lucastorres.dev/main.min.css" />
+
+  
+
+  
+     
+  <link rel="preload" as="image" href="http://lucastorres.dev/theme.png" />
+
+  
+  
+  
+  <link rel="preload" as="image" href="https://avatars.githubusercontent.com/u/18267941?v=4" />
+  
+  
+
+  
+  <link rel="preload" as="image" href="http://lucastorres.dev/twitter.svg" />
+  
+  <link rel="preload" as="image" href="http://lucastorres.dev/github.svg" />
+  
+  <link rel="preload" as="image" href="http://lucastorres.dev/instagram.svg" />
+  
+  <link rel="preload" as="image" href="http://lucastorres.dev/rss.svg" />
+  
+
+  
+  <link rel="icon" href="http://lucastorres.dev/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://lucastorres.dev/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.92.2" />
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:title" content="Normalizacão De Banco De Dados" />
+<meta property="og:description" content="Introdução Como sempre na hora do sofrimento eu vou buscar conhecer como resolver alguns problemas encontrados e dessa vez o problema foi relacionado com banco de dados e então vamos falar sobre a normalização de banco de dados. É um processo que visa a redução da redundância de dados em um banco de dados relacional, mantendo a consistência e integridade dos dados. Existem várias formas normais (NF) que um banco de dados pode atender, sendo as mais comuns 1NF, 2NF, 3NF, 4NF e 5NF." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://lucastorres.dev/posts/normalizacao-de-banco-de-dados/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-04-18T21:33:20-03:00" />
+<meta property="article:modified_time" content="2023-04-18T21:33:20-03:00" />
+
+
+  
+  <meta itemprop="name" content="Normalizacão De Banco De Dados">
+<meta itemprop="description" content="Introdução Como sempre na hora do sofrimento eu vou buscar conhecer como resolver alguns problemas encontrados e dessa vez o problema foi relacionado com banco de dados e então vamos falar sobre a normalização de banco de dados. É um processo que visa a redução da redundância de dados em um banco de dados relacional, mantendo a consistência e integridade dos dados. Existem várias formas normais (NF) que um banco de dados pode atender, sendo as mais comuns 1NF, 2NF, 3NF, 4NF e 5NF."><meta itemprop="datePublished" content="2023-04-18T21:33:20-03:00" />
+<meta itemprop="dateModified" content="2023-04-18T21:33:20-03:00" />
+<meta itemprop="wordCount" content="789">
+<meta itemprop="keywords" content="" />
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Normalizacão De Banco De Dados"/>
+<meta name="twitter:description" content="Introdução Como sempre na hora do sofrimento eu vou buscar conhecer como resolver alguns problemas encontrados e dessa vez o problema foi relacionado com banco de dados e então vamos falar sobre a normalização de banco de dados. É um processo que visa a redução da redundância de dados em um banco de dados relacional, mantendo a consistência e integridade dos dados. Existem várias formas normais (NF) que um banco de dados pode atender, sendo as mais comuns 1NF, 2NF, 3NF, 4NF e 5NF."/>
+
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[5rem] max-w-3xl px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="-translate-x-[1px] -translate-y-0.5 text-3xl font-bold"
+      href="http://lucastorres.dev/"
+      >Lucas Torres</a
+    >
+    <div
+      class="btn-dark text-[0] ml-6 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 -mr-8 flex h-[5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = `"#f8f5d7"`.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 dark:invert lg:mt-0 lg:ml-12 lg:items-center lg:space-x-6"
+    >
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./twitter.svg)"
+        href="https://twitter.com/lucatsf"
+        target="_blank"
+        rel="me"
+      >
+        twitter
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/lucatsf"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./instagram.svg)"
+        href="https://instagram.com/lucatsf"
+        target="_blank"
+        rel="me"
+      >
+        instagram
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./rss.svg)"
+        href="http://lucastorres.dev/index.xml"
+        target="_blank"
+        rel="alternate"
+      >
+        rss
+      </a>
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-10rem)] max-w-3xl px-8 pt-16 pb-24 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-20">
+    <h1 class="!my-0 pb-2.5">Normalizacão De Banco De Dados</h1>
+
+    
+    <div class="text-sm opacity-60">
+      
+      <time>Apr 18, 2023</time>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><h2 id="introdução">Introdução</h2>
+<p>Como sempre na hora do sofrimento eu vou buscar conhecer como resolver alguns problemas encontrados e dessa vez o problema foi relacionado com banco de dados e então vamos falar sobre a normalização de banco de dados.
+É um processo que visa a redução da redundância de dados em um banco de dados relacional, mantendo a consistência e integridade dos dados. Existem várias formas normais (NF) que um banco de dados pode atender, sendo as mais comuns 1NF, 2NF, 3NF, 4NF e 5NF.</p>
+<p>A normalização de banco de dados é um processo importante que deve ser aplicado durante o projeto e a modelagem de um banco de dados relacional. É importante realizar a normalização de um banco de dados para garantir a integridade dos dados e evitar a redundância de informações, o que pode levar a inconsistências e anomalias nos dados.
+A normalização é especialmente importante em bancos de dados maiores, com muitas tabelas e relacionamentos complexos. Nestes casos, a normalização pode ajudar a melhorar a eficiência e a performance do banco de dados, uma vez que a redundância de dados é reduzida e as informações são armazenadas de forma mais organizada.
+No entanto, a normalização também pode trazer alguns desafios e trade-offs, como a complexidade da modelagem e o aumento do número de tabelas e relacionamentos, o que pode tornar as consultas mais complexas. Portanto, é importante encontrar um equilíbrio entre a normalização e a simplicidade do modelo de banco de dados, de modo a garantir a eficiência, a integridade e a facilidade de uso do sistema.</p>
+<h2 id="motivação">Motivação</h2>
+<p>Por experiência de vida eu conheci alguns bancos de dados com muitos problemas e então foi necessário eu entender e compreender como eu deveria agir nessas situações, e foi aí que eu conheci alguns conceitos como a normalização de banco de dados que traz algumas vantagens como redução da redundância de dados ao eliminar a redundância de informações em uma tabela, a normalização ajuda a economizar espaço de armazenamento e a manter a consistência dos dados. Isso também ajuda a evitar inconsistências nos dados, já que não há duplicação de informações, melhora da performance do banco de dados, com uma estrutura de dados normalizada, as consultas podem ser mais eficientes e rápidas, pois há menos dados a serem acessados e processados. Isso é especialmente importante em bancos de dados grandes e complexos.
+Facilita a manutenção do banco de dados: Um banco de dados normalizado é mais fácil de manter e modificar, pois a estrutura é organizada e consistente. Isso também facilita a adição ou remoção de dados, ou a criação de novas tabelas e relacionamentos.</p>
+<p>Como eu havia dito no início desse texto existem várias formas normais que um banco de dados pode atender, sendo as mais comuns 1NF, 2NF, 3NF, 4NF e 5NF.</p>
+<p>Forma Normal (1NF): Nesta forma normal, todos os atributos de uma tabela devem conter valores atômicos, ou seja, indivisíveis. Cada coluna de uma tabela deve conter apenas um valor para cada registro. Caso uma tabela tenha valores multivalorados, ela não está em 1NF.
+2ª Forma Normal (2NF): Para atender a esta forma normal, uma tabela precisa estar na 1NF e todos os seus atributos não-chave devem ser totalmente dependentes da chave primária. Se houver atributos que dependam apenas de parte da chave primária, então é necessário criar uma nova tabela para estes atributos.
+3ª Forma Normal (3NF): Para atender a esta forma normal, uma tabela precisa estar na 2NF e todos os seus atributos não-chave devem ser independentes entre si. Ou seja, não deve haver dependência transitiva entre os atributos não-chave.
+4ª Forma Normal (4NF): Esta forma normal é menos conhecida e mais avançada do que as anteriores. Para atender a 4NF, uma tabela precisa estar na 3NF e não pode ter múltiplas relações de dependência multi-valoradas. Em outras palavras, se houver atributos que dependam de múltiplas combinações de valores de outras colunas, eles devem ser movidos para uma nova tabela.
+5ª Forma Normal (5NF): Esta forma normal é a mais avançada e menos comum do que as anteriores. Para atender a 5NF, uma tabela precisa estar na 4NF e não pode ter dependências de junção. Isso significa que não deve haver duas ou mais tabelas que possam ser combinadas para recuperar um atributo.</p>
+<h2 id="conclusão">Conclusão</h2>
+<p>A normalização de banco de dados é um tópico importante para projetar bancos de dados bem estruturados e eficientes, evitando a redundância de dados e garantindo a integridade dos dados. Mas acredito que o maior problema é a complexidade de realizar a simplificação de um banco de dados, sem causar mudanças drásticas, normalmente uma simples mudança no banco de dados gera impacto em diversos serviços e isso gera trabalho, custos e tempo.</p>
+<p><strong>Referências:</strong></p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=GFQaEYEc8_8">Vídeo de referência</a></li>
+<li><a href="https://www.youtube.com/playlist?list=PLNITTkCQVxeXryTQvY0JBWTyN9ynxxPH8">Playlist completa de referência</a></li>
+</ul>
+</section>
+
+  
+  
+
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://lucastorres.dev/posts/tecnica-pert-program-evaluation-and-review-technique/"
+      ><span>Técnica PERT (Program Evaluation and Review Technique)</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+
+  
+  
+
+  
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="opaco mx-auto flex h-[5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2023
+    <a class="link" href="http://lucastorres.dev">Lucas Torres</a>
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >Powered by Hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >Theme Paper</a
+  >
+</footer>
+
+  </body>
+</html>

@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Lucas Torres</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Mon, 27 Mar 2023 23:53:20 -0800</lastBuildDate><atom:link href="http://lucastorres.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 18 Apr 2023 21:33:20 -0300</lastBuildDate><atom:link href="http://lucastorres.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Normalizacão De Banco De Dados</title>
+      <link>http://lucastorres.dev/posts/normalizacao-de-banco-de-dados/</link>
+      <pubDate>Tue, 18 Apr 2023 21:33:20 -0300</pubDate>
+      
+      <guid>http://lucastorres.dev/posts/normalizacao-de-banco-de-dados/</guid>
+      <description>Introdução Como sempre na hora do sofrimento eu vou buscar conhecer como resolver alguns problemas encontrados e dessa vez o problema foi relacionado com banco de dados e então vamos falar sobre a normalização de banco de dados. É um processo que visa a redução da redundância de dados em um banco de dados relacional, mantendo a consistência e integridade dos dados. Existem várias formas normais (NF) que um banco de dados pode atender, sendo as mais comuns 1NF, 2NF, 3NF, 4NF e 5NF.</description>
+    </item>
+    
     <item>
       <title>Técnica PERT (Program Evaluation and Review Technique)</title>
       <link>http://lucastorres.dev/posts/tecnica-pert-program-evaluation-and-review-technique/</link>

@@ -1,6 +1,6 @@
 ---
-title: "Normalização de banco de dados"
-date: 2023-04-18T23:30:20-08:00
+title: "Normalizacão De Banco De Dados"
+date: 2023-04-18T21:33:20-03:00
 draft: false
 ---
 
