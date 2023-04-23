@@ -13,7 +13,7 @@ A normalização é importante durante o projeto e a modelagem de um banco de da
 
 Existem várias formas normais que um banco de dados pode atender, sendo as mais comuns a 1NF, 2NF, 3NF, 4NF e 5NF. Cada uma delas apresenta critérios específicos que devem ser atendidos para que a tabela esteja em conformidade com a forma normal correspondente. Por exemplo, na 1NF, todos os atributos de uma tabela devem conter valores atômicos, ou seja, indivisíveis. Na 2NF, todos os atributos não-chave devem ser totalmente dependentes da chave primária, e assim por diante.
 
-## Forma Normal (1NF)
+## 1ª Forma Normal (1NF)
 
 Nesta forma normal, todos os atributos de uma tabela devem conter valores atômicos, ou seja, indivisíveis. Cada coluna de uma tabela deve conter apenas um valor para cada registro. Caso uma tabela tenha valores multivalorados, ela não está em 1NF.
 
